@@ -416,7 +416,7 @@ h6 {
 #hero .btn-get-started:hover {
   transition: 0.5s;
   background: #fff;
-  color: #7cc576;
+  color: rgb(230,0,43);
 }
 
 @media (min-width: 1024px) {
