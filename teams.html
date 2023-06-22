@@ -12,6 +12,7 @@
     <!-- Favicons -->
     <link href="assets/img/f1/f1logo2.png" rel="icon">
     <link href="assets/img/f1/f1logo2.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="path/to/lightbox.css">
 
     <!-- Google Fonts -->
     <link
@@ -84,26 +85,29 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <div class="image">
-                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="assets/img/f1/carusel/redbull/1677954726625.avif"
-                                            class="d-block w-100 carousel-image" alt="teams">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/f1/carusel/redbull/1678027550607.avif"
-                                            class="d-block w-100 carousel-image" alt="teams">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/f1/carusel/redbull/1678045692074.avif"
-                                            class="d-block w-100 carousel-image" alt="teams">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   <div class="col-lg-6" data-aos="fade-right">
+    <div class="image">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="assets/img/f1/carusel/redbull/1677954726625.avif" data-lightbox="redbull">
+                        <img src="assets/img/f1/carusel/redbull/1677954726625.avif" class="d-block w-100 carousel-image" alt="teams">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="assets/img/f1/carusel/redbull/1678027550607.avif" data-lightbox="redbull">
+                        <img src="assets/img/f1/carusel/redbull/1678027550607.avif" class="d-block w-100 carousel-image" alt="teams">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="assets/img/f1/carusel/redbull/1678045692074.avif" data-lightbox="redbull">
+                        <img src="assets/img/f1/carusel/redbull/1678045692074.avif" class="d-block w-100 carousel-image" alt="teams">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3">
                             <h3 id="Redbull">Oracle Red Bull Racing</h3>
@@ -466,11 +470,18 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="path/to/lightbox.js"></script>
     <script>
         $(document).ready(function () {
             $('.carousel').carousel();
         });
     </script>
+                            <script>
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+    });
+</script>
 
 </body>
 
