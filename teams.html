@@ -12,10 +12,11 @@
     <!-- Favicons -->
     <link href="assets/img/f1/f1logo2.png" rel="icon">
     <link href="assets/img/f1/f1logo2.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="path/to/lightbox.css">
-    <link rel="stylesheet" href="path/to/fancybox.css">
-<script src="path/to/jquery.js"></script>
-<script src="path/to/fancybox.js"></script>
+    <link rel="stylesheet" href="/assets/css/lightbox.css">
+    <link rel="stylesheet" href="/assets/css/fancybox.css">
+<script src="/assets/js/jquary.js"></script>
+<script src="/assets/js/fancy.js"></script>
+
 
     <!-- Google Fonts -->
     <link
@@ -88,29 +89,66 @@
                 </div>
 
                 <div class="row">
-                   <div class="col-lg-6" data-aos="fade-right">
-    <div class="image">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <a href="assets/img/f1/carusel/redbull/1677954726625.avif" data-lightbox="redbull">
-                        <img src="assets/img/f1/carusel/redbull/1677954726625.avif" class="d-block w-100 carousel-image" alt="teams">
-                    </a>
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="image">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <a href="#" data-lightbox="redbull" data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="assets/img/f1/carusel/redbull/1677954726625.avif" class="d-block w-100 carousel-image" alt="teams">
+                                        </a>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a href="#" data-lightbox="redbull" data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="assets/img/f1/carusel/redbull/1678027550607.avif" class="d-block w-100 carousel-image" alt="teams">
+                                        </a>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a href="#" data-lightbox="redbull" data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="assets/img/f1/carusel/redbull/1678045692074.avif" class="d-block w-100 carousel-image" alt="teams">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="assets/img/f1/carusel/redbull/1677954726625.avif" class="d-block w-100" alt="teams">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/f1/carusel/redbull/1678027550607.avif" class="d-block w-100" alt="teams">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="assets/img/f1/carusel/redbull/1678045692074.avif" class="d-block w-100" alt="teams">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <a href="assets/img/f1/carusel/redbull/1678027550607.avif" data-lightbox="redbull">
-                        <img src="assets/img/f1/carusel/redbull/1678027550607.avif" class="d-block w-100 carousel-image" alt="teams">
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="assets/img/f1/carusel/redbull/1678045692074.avif" data-lightbox="redbull">
-                        <img src="assets/img/f1/carusel/redbull/1678045692074.avif" class="d-block w-100 carousel-image" alt="teams">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                
+               
+                
+                
+                
+               
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3">
                             <h3 id="Redbull">Oracle Red Bull Racing</h3>
@@ -129,6 +167,7 @@
                         </div>
                     </div>
                 </div>
+                  
                 <!--right-->
                 <div class="row pad">
                     <div class="col-lg-6" data-aos="fade-right">
@@ -475,6 +514,16 @@
     <script src="assets/js/main.js"></script>
     <script src="path/to/lightbox.js"></script>
     <script>
+        $('.carousel-image').on('click', function () {
+            $('#carouselExampleControls').carousel('pause');
+            $('.carousel-control-prev, .carousel-control-next').show();
+        });
+    
+        $('#imageModal').on('hidden.bs.modal', function () {
+            $('#carouselExampleControls').carousel('cycle');
+        });
+    </script>
+    <script>
         $(document).ready(function () {
             $('.carousel').carousel();
         });
@@ -483,6 +532,20 @@
     lightbox.option({
         'resizeDuration': 200,
         'wrapAround': true
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('[data-fancybox="redbull"]').fancybox({
+            buttons: [
+                'slideShow',
+                'fullScreen',
+                'thumbs',
+                'close'
+            ],
+            loop: true,
+            protect: true
+        });
     });
 </script>
 
